@@ -127,8 +127,7 @@ class HomePageState extends State<HomePage> {
     _mBoard[move] = COMPUTER_PLAYER;
   }
 
-  // Display Message
-
+  // Display information Message
   void displayMessage(String Text)
   {
     _text = Text;
@@ -143,8 +142,11 @@ class HomePageState extends State<HomePage> {
   }
 
 
-// Functions For Buttons
-void _button(int btn_no) {
+  // Functions For Buttons
+
+  // ========= Function for button 0  ========
+void _button0() {
+    int btn_no = 0;
   print('on tap called card $btn_no was pressed ');
   setState(() {
     // no one has won continue game
@@ -231,6 +233,763 @@ void _button(int btn_no) {
   });
 }
 
+
+
+//==========start Function for button 1 ===============
+
+  void _button1() {
+    int btn_no = 1;
+    print('on tap called card $btn_no was pressed ');
+    setState(() {
+      // no one has won continue game
+      if(!gameOver) {
+        if (_mBoard[btn_no] != HUMAN_PLAYER &&
+            _mBoard[btn_no] != COMPUTER_PLAYER) {
+          _mBoard[btn_no] = HUMAN_PLAYER;
+          displayBoard();
+
+          //check for wins
+          win = checkWinner();
+
+          // Decide What message should be displayed to user according to his move
+          switch (win) {
+            case 1:
+              {
+                displayMessage(" Game Tie !!! ");
+                gameOver=true;
+              }
+              break;
+            case 2:
+              {
+                displayMessage("X Wins!");
+                gameOver=true;
+              }
+              break;
+
+            case 3:
+              {
+                displayMessage("O wins! ");
+                gameOver=true;
+              }
+              break;
+
+            default :
+              {
+                displayMessage("O\'s turn ");
+              }
+              break;
+          }
+
+          // If win = 0 means no one has won yet so continue game, and let computer make his move
+          if (win == 0) {
+            _getComputerMove();
+            win = checkWinner();
+
+            // Decide What message should be displayed to user
+            switch (win) {
+              case 1:
+                {
+                  displayMessage("Game Tie !!");
+                  gameOver=true;
+                }
+                break;
+
+              case 2:
+                {
+                  displayMessage("X Wins! ");
+                  gameOver=true;
+                }
+                break;
+
+              case 3:
+                {
+                  displayMessage("O wins!");
+                  gameOver=true;
+                }
+                break;
+
+              default :
+                {
+                  displayMessage('O Moved, X\'s Turn ');
+                }
+                break;
+            }
+          }
+        } else {
+          print('Already Filled !!!');
+        }
+      }else{
+        print('Game Over');
+      }
+
+    });
+  }
+//============    end for function for button 1  ===========
+
+
+
+
+//==========start Function for button 2 ===============
+
+  void _button2() {
+    int btn_no = 2;
+    print('on tap called card $btn_no was pressed ');
+    setState(() {
+      // no one has won continue game
+      if(!gameOver) {
+        if (_mBoard[btn_no] != HUMAN_PLAYER &&
+            _mBoard[btn_no] != COMPUTER_PLAYER) {
+          _mBoard[btn_no] = HUMAN_PLAYER;
+          displayBoard();
+
+          //check for wins
+          win = checkWinner();
+
+          // Decide What message should be displayed to user according to his move
+          switch (win) {
+            case 1:
+              {
+                displayMessage(" Game Tie !!! ");
+                gameOver=true;
+              }
+              break;
+            case 2:
+              {
+                displayMessage("X Wins!");
+                gameOver=true;
+              }
+              break;
+
+            case 3:
+              {
+                displayMessage("O wins! ");
+                gameOver=true;
+              }
+              break;
+
+            default :
+              {
+                displayMessage("O\'s turn ");
+              }
+              break;
+          }
+
+          // If win = 0 means no one has won yet so continue game, and let computer make his move
+          if (win == 0) {
+            _getComputerMove();
+            win = checkWinner();
+
+            // Decide What message should be displayed to user
+            switch (win) {
+              case 1:
+                {
+                  displayMessage("Game Tie !!");
+                  gameOver=true;
+                }
+                break;
+
+              case 2:
+                {
+                  displayMessage("X Wins! ");
+                  gameOver=true;
+                }
+                break;
+
+              case 3:
+                {
+                  displayMessage("O wins!");
+                  gameOver=true;
+                }
+                break;
+
+              default :
+                {
+                  displayMessage('O Moved, X\'s Turn ');
+                }
+                break;
+            }
+          }
+        } else {
+          print('Already Filled !!!');
+        }
+      }else{
+        print('Game Over');
+      }
+
+    });
+  }
+//============    end for function for button 2  ===========
+
+
+
+
+
+//==========start Function for button 3 ===============
+
+  void _button3() {
+    int btn_no = 3;
+    print('on tap called card $btn_no was pressed ');
+    setState(() {
+      // no one has won continue game
+      if(!gameOver) {
+        if (_mBoard[btn_no] != HUMAN_PLAYER &&
+            _mBoard[btn_no] != COMPUTER_PLAYER) {
+          _mBoard[btn_no] = HUMAN_PLAYER;
+          displayBoard();
+
+          //check for wins
+          win = checkWinner();
+
+          // Decide What message should be displayed to user according to his move
+          switch (win) {
+            case 1:
+              {
+                displayMessage(" Game Tie !!! ");
+                gameOver=true;
+              }
+              break;
+            case 2:
+              {
+                displayMessage("X Wins!");
+                gameOver=true;
+              }
+              break;
+
+            case 3:
+              {
+                displayMessage("O wins! ");
+                gameOver=true;
+              }
+              break;
+
+            default :
+              {
+                displayMessage("O\'s turn ");
+              }
+              break;
+          }
+
+          // If win = 0 means no one has won yet so continue game, and let computer make his move
+          if (win == 0) {
+            _getComputerMove();
+            win = checkWinner();
+
+            // Decide What message should be displayed to user
+            switch (win) {
+              case 1:
+                {
+                  displayMessage("Game Tie !!");
+                  gameOver=true;
+                }
+                break;
+
+              case 2:
+                {
+                  displayMessage("X Wins! ");
+                  gameOver=true;
+                }
+                break;
+
+              case 3:
+                {
+                  displayMessage("O wins!");
+                  gameOver=true;
+                }
+                break;
+
+              default :
+                {
+                  displayMessage('O Moved, X\'s Turn ');
+                }
+                break;
+            }
+          }
+        } else {
+          print('Already Filled !!!');
+        }
+      }else{
+        print('Game Over');
+      }
+
+    });
+  }
+//============    end for function for button 3  ===========
+
+
+
+
+//==========start Function for button 4 ===============
+
+  void _button4() {
+    int btn_no = 4;
+    print('on tap called card $btn_no was pressed ');
+    setState(() {
+      // no one has won continue game
+      if(!gameOver) {
+        if (_mBoard[btn_no] != HUMAN_PLAYER &&
+            _mBoard[btn_no] != COMPUTER_PLAYER) {
+          _mBoard[btn_no] = HUMAN_PLAYER;
+          displayBoard();
+
+          //check for wins
+          win = checkWinner();
+
+          // Decide What message should be displayed to user according to his move
+          switch (win) {
+            case 1:
+              {
+                displayMessage(" Game Tie !!! ");
+                gameOver=true;
+              }
+              break;
+            case 2:
+              {
+                displayMessage("X Wins!");
+                gameOver=true;
+              }
+              break;
+
+            case 3:
+              {
+                displayMessage("O wins! ");
+                gameOver=true;
+              }
+              break;
+
+            default :
+              {
+                displayMessage("O\'s turn ");
+              }
+              break;
+          }
+
+          // If win = 0 means no one has won yet so continue game, and let computer make his move
+          if (win == 0) {
+            _getComputerMove();
+            win = checkWinner();
+
+            // Decide What message should be displayed to user
+            switch (win) {
+              case 1:
+                {
+                  displayMessage("Game Tie !!");
+                  gameOver=true;
+                }
+                break;
+
+              case 2:
+                {
+                  displayMessage("X Wins! ");
+                  gameOver=true;
+                }
+                break;
+
+              case 3:
+                {
+                  displayMessage("O wins!");
+                  gameOver=true;
+                }
+                break;
+
+              default :
+                {
+                  displayMessage('O Moved, X\'s Turn ');
+                }
+                break;
+            }
+          }
+        } else {
+          print('Already Filled !!!');
+        }
+      }else{
+        print('Game Over');
+      }
+
+    });
+  }
+//============    end for function for button 4  ===========
+
+
+
+
+//==========start Function for button 5 ===============
+
+  void _button5() {
+    int btn_no = 5;
+    print('on tap called card $btn_no was pressed ');
+    setState(() {
+      // no one has won continue game
+      if(!gameOver) {
+        if (_mBoard[btn_no] != HUMAN_PLAYER &&
+            _mBoard[btn_no] != COMPUTER_PLAYER) {
+          _mBoard[btn_no] = HUMAN_PLAYER;
+          displayBoard();
+
+          //check for wins
+          win = checkWinner();
+
+          // Decide What message should be displayed to user according to his move
+          switch (win) {
+            case 1:
+              {
+                displayMessage(" Game Tie !!! ");
+                gameOver=true;
+              }
+              break;
+            case 2:
+              {
+                displayMessage("X Wins!");
+                gameOver=true;
+              }
+              break;
+
+            case 3:
+              {
+                displayMessage("O wins! ");
+                gameOver=true;
+              }
+              break;
+
+            default :
+              {
+                displayMessage("O\'s turn ");
+              }
+              break;
+          }
+
+          // If win = 0 means no one has won yet so continue game, and let computer make his move
+          if (win == 0) {
+            _getComputerMove();
+            win = checkWinner();
+
+            // Decide What message should be displayed to user
+            switch (win) {
+              case 1:
+                {
+                  displayMessage("Game Tie !!");
+                  gameOver=true;
+                }
+                break;
+
+              case 2:
+                {
+                  displayMessage("X Wins! ");
+                  gameOver=true;
+                }
+                break;
+
+              case 3:
+                {
+                  displayMessage("O wins!");
+                  gameOver=true;
+                }
+                break;
+
+              default :
+                {
+                  displayMessage('O Moved, X\'s Turn ');
+                }
+                break;
+            }
+          }
+        } else {
+          print('Already Filled !!!');
+        }
+      }else{
+        print('Game Over');
+      }
+
+    });
+  }
+//============    end for function for button 5  ===========
+
+
+
+//==========start Function for button 6 ===============
+
+  void _button6() {
+    int btn_no = 6;
+    print('on tap called card $btn_no was pressed ');
+    setState(() {
+      // no one has won continue game
+      if(!gameOver) {
+        if (_mBoard[btn_no] != HUMAN_PLAYER &&
+            _mBoard[btn_no] != COMPUTER_PLAYER) {
+          _mBoard[btn_no] = HUMAN_PLAYER;
+          displayBoard();
+
+          //check for wins
+          win = checkWinner();
+
+          // Decide What message should be displayed to user according to his move
+          switch (win) {
+            case 1:
+              {
+                displayMessage(" Game Tie !!! ");
+                gameOver=true;
+              }
+              break;
+            case 2:
+              {
+                displayMessage("X Wins!");
+                gameOver=true;
+              }
+              break;
+
+            case 3:
+              {
+                displayMessage("O wins! ");
+                gameOver=true;
+              }
+              break;
+
+            default :
+              {
+                displayMessage("O\'s turn ");
+              }
+              break;
+          }
+
+          // If win = 0 means no one has won yet so continue game, and let computer make his move
+          if (win == 0) {
+            _getComputerMove();
+            win = checkWinner();
+
+            // Decide What message should be displayed to user
+            switch (win) {
+              case 1:
+                {
+                  displayMessage("Game Tie !!");
+                  gameOver=true;
+                }
+                break;
+
+              case 2:
+                {
+                  displayMessage("X Wins! ");
+                  gameOver=true;
+                }
+                break;
+
+              case 3:
+                {
+                  displayMessage("O wins!");
+                  gameOver=true;
+                }
+                break;
+
+              default :
+                {
+                  displayMessage('O Moved, X\'s Turn ');
+                }
+                break;
+            }
+          }
+        } else {
+          print('Already Filled !!!');
+        }
+      }else{
+        print('Game Over');
+      }
+
+    });
+  }
+//============    end for function for button 6  ===========
+
+
+
+
+//==========start Function for button 7 ===============
+
+  void _button7() {
+    int btn_no = 7;
+    print('on tap called card $btn_no was pressed ');
+    setState(() {
+      // no one has won continue game
+      if(!gameOver) {
+        if (_mBoard[btn_no] != HUMAN_PLAYER &&
+            _mBoard[btn_no] != COMPUTER_PLAYER) {
+          _mBoard[btn_no] = HUMAN_PLAYER;
+          displayBoard();
+
+          //check for wins
+          win = checkWinner();
+
+          // Decide What message should be displayed to user according to his move
+          switch (win) {
+            case 1:
+              {
+                displayMessage(" Game Tie !!! ");
+                gameOver=true;
+              }
+              break;
+            case 2:
+              {
+                displayMessage("X Wins!");
+                gameOver=true;
+              }
+              break;
+
+            case 3:
+              {
+                displayMessage("O wins! ");
+                gameOver=true;
+              }
+              break;
+
+            default :
+              {
+                displayMessage("O\'s turn ");
+              }
+              break;
+          }
+
+          // If win = 0 means no one has won yet so continue game, and let computer make his move
+          if (win == 0) {
+            _getComputerMove();
+            win = checkWinner();
+
+            // Decide What message should be displayed to user
+            switch (win) {
+              case 1:
+                {
+                  displayMessage("Game Tie !!");
+                  gameOver=true;
+                }
+                break;
+
+              case 2:
+                {
+                  displayMessage("X Wins! ");
+                  gameOver=true;
+                }
+                break;
+
+              case 3:
+                {
+                  displayMessage("O wins!");
+                  gameOver=true;
+                }
+                break;
+
+              default :
+                {
+                  displayMessage('O Moved, X\'s Turn ');
+                }
+                break;
+            }
+          }
+        } else {
+          print('Already Filled !!!');
+        }
+      }else{
+        print('Game Over');
+      }
+
+    });
+  }
+//============    end for function for button 7  ===========
+
+
+
+
+
+//==========start Function for button 8 ===============
+
+  void _button8() {
+    int btn_no = 8;
+    print('on tap called card $btn_no was pressed ');
+    setState(() {
+      // no one has won continue game
+      if(!gameOver) {
+        if (_mBoard[btn_no] != HUMAN_PLAYER &&
+            _mBoard[btn_no] != COMPUTER_PLAYER) {
+          _mBoard[btn_no] = HUMAN_PLAYER;
+          displayBoard();
+
+          //check for wins
+          win = checkWinner();
+
+          // Decide What message should be displayed to user according to his move
+          switch (win) {
+            case 1:
+              {
+                displayMessage(" Game Tie !!! ");
+                gameOver=true;
+              }
+              break;
+            case 2:
+              {
+                displayMessage("X Wins!");
+                gameOver=true;
+              }
+              break;
+
+            case 3:
+              {
+                displayMessage("O wins! ");
+                gameOver=true;
+              }
+              break;
+
+            default :
+              {
+                displayMessage("O\'s turn ");
+              }
+              break;
+          }
+
+          // If win = 0 means no one has won yet so continue game, and let computer make his move
+          if (win == 0) {
+            _getComputerMove();
+            win = checkWinner();
+
+            // Decide What message should be displayed to user
+            switch (win) {
+              case 1:
+                {
+                  displayMessage("Game Tie !!");
+                  gameOver=true;
+                }
+                break;
+
+              case 2:
+                {
+                  displayMessage("X Wins! ");
+                  gameOver=true;
+                }
+                break;
+
+              case 3:
+                {
+                  displayMessage("O wins!");
+                  gameOver=true;
+                }
+                break;
+
+              default :
+                {
+                  displayMessage('O Moved, X\'s Turn ');
+                }
+                break;
+            }
+          }
+        } else {
+          print('Already Filled !!!');
+        }
+      }else{
+        print('Game Over');
+      }
+
+    });
+  }
+//============    end for function for button 8  ===========
+
+
+
+
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -314,7 +1073,7 @@ void _button(int btn_no) {
                         child: RaisedButton(
                             padding: const EdgeInsets.all(10.0),
                             onPressed:(){
-                              _button(0);
+                              _button0();
                             },
                             child: new Text(_mBoard[0],
                                 textAlign: TextAlign.center,
@@ -333,7 +1092,7 @@ void _button(int btn_no) {
                         child: RaisedButton(
                             padding: const EdgeInsets.all(10.0),
                             onPressed: (){
-                              _button(1);
+                              _button1();
                             },
                             child: new Text(_mBoard[1],
                                 textAlign: TextAlign.center,
@@ -352,7 +1111,7 @@ void _button(int btn_no) {
                         child: RaisedButton(
                             padding: const EdgeInsets.all(10.0),
                             onPressed: (){
-                              _button(2);
+                              _button2();
                             },
                             child: new Text(_mBoard[2],
                                 textAlign: TextAlign.center,
@@ -377,7 +1136,7 @@ void _button(int btn_no) {
                         child: RaisedButton(
                             padding: const EdgeInsets.all(10.0),
                             onPressed: (){
-                              _button(3);
+                              _button3();
                             },
                             child: new Text(_mBoard[3],
                                 textAlign: TextAlign.center,
@@ -396,7 +1155,7 @@ void _button(int btn_no) {
                         child: RaisedButton(
                             padding: const EdgeInsets.all(10.0),
                             onPressed: (){
-                              _button(4);
+                              _button4();
                             },
                             child: new Text(_mBoard[4],
                                 textAlign: TextAlign.center,
@@ -415,7 +1174,7 @@ void _button(int btn_no) {
                         child: RaisedButton(
                             padding: const EdgeInsets.all(10.0),
                             onPressed: (){
-                              _button(5);
+                              _button5();
                             },
                             child: new Text(_mBoard[5],
                                 textAlign: TextAlign.center,
@@ -440,7 +1199,7 @@ void _button(int btn_no) {
                         child: RaisedButton(
                             padding: const EdgeInsets.all(10.0),
                             onPressed: (){
-                              _button(6);
+                              _button6();
                             },
                             child: new Text(_mBoard[6],
                                 textAlign: TextAlign.center,
@@ -459,7 +1218,7 @@ void _button(int btn_no) {
                         child: RaisedButton(
                             padding: const EdgeInsets.all(10.0),
                             onPressed: (){
-                              _button(7);
+                              _button7();
                             },
                             child: new Text(_mBoard[7],
                                 textAlign: TextAlign.center,
@@ -478,7 +1237,7 @@ void _button(int btn_no) {
                         child: RaisedButton(
                             padding: const EdgeInsets.all(10.0),
                             onPressed: (){
-                              _button(8);
+                              _button8();
                             },
                             child: new Text(_mBoard[8],
                                 textAlign: TextAlign.center,
